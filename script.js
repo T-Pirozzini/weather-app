@@ -63,6 +63,8 @@ button.addEventListener('click', async function getWeather(e) {
     const giphyData = await giphyResponse.json();
     addGiph(giphyData.data.images.original.url);
     
+    const weatherInfo = document.querySelector(".weatherInfo")
+    weatherInfo.style.display = "flex";
     input.value = ""
     h2.textContent = ""
     updateWeather(weatherData)    
