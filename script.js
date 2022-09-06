@@ -7,21 +7,24 @@ const lat = document.getElementById('lat')
 const temp = document.getElementById('temp')
 
 let city = "";
-
+let weatherType = ""
 const input = document.querySelector('input');    
 const button = document.querySelector('button')
 const img = document.querySelector('img');   
 
 const weatherAPI = "371c44fb7c2d48cd04b154a7a724acf7";
 
-const changeBackground = (weatherData) => {
-  console.log("background", weatherData.weather[0].main)
-  if (weatherData.weather[0].main == "Clear") {
-    background.classList.add('night')
-  } else if (weatherData.weather[0].main == 'Clouds') {    
-    background.classList.add('day')
+const changeBackground = (weatherType) => { 
+  if (weatherType === "Clear") {
+    background.classList.add('clear')
+    background.classList.remove('cloudy')
+  } else if (weatherType === 'Clouds') {    
+    background.classList.add('cloudy')
+    background.classList.remove('clear')
   } else {
-    background.classList.add('morning')
+    background.classList.add('rain')
+    background.classList.remove('clear')
+    background.classList.remove('cloudy')
   }
 }
 
@@ -39,11 +42,9 @@ const updateWeather = (weatherData) => {
   lat.textContent = "Longitude: " + weatherData.coord.lat
 }
 
-
 const addGiph = (giph) => {
     img.src = giph
 }
-
 
 // fetch weather data on button click
 button.addEventListener('click', async function getWeather(e) {
@@ -54,7 +55,8 @@ button.addEventListener('click', async function getWeather(e) {
     const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&limit=5&appid=${weatherAPI}`, {mode: 'cors'});
     const weatherData = await weatherResponse.json();
     console.log(weatherData)             
-    changeBackground(weatherData);
+    weatherType = weatherData.weather[0].main
+    changeBackground(weatherType);
     kelvinToCelcius(weatherData.main.temp)
     
     const giphyResponse = await await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=V6DEqhbisIo51r2by8ps9KvlE6iWD2Fc&s=${city}`, {mode: 'cors'});
@@ -63,7 +65,7 @@ button.addEventListener('click', async function getWeather(e) {
     
     input.value = ""
     h2.textContent = ""
-    updateWeather(weatherData)
+    updateWeather(weatherData)    
   } catch (error) {   
     h2.textContent = "City name not found";    
   } 

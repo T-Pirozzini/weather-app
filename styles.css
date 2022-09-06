@@ -2,16 +2,33 @@
   font-family: 'Montserrat', sans-serif;
 }
 body {
-  background-color: bisque;
+  background: url("./assets/pexels-johannes-plenio.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-body.morning {
-  background-color: orangered;
+body.rain {
+  background: url("./assets/pexels-eberhard-grossgasteiger-2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-body.day {
-  background-color: green;
+
+body.cloudy {
+  background: url("./assets/pexels-eberhard-grossgasteiger.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-body.night {
-  background-color: blue;
+body.clear {
+  background: url("./assets/pexels-francesco-ungaro.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 img {
@@ -36,12 +53,17 @@ img {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background: rgba(255, 255, 255, 0.534);
+  width: 300px;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 input {
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
+
 button {
   background-color: black;
   color: white;
@@ -52,4 +74,5 @@ button {
 
 h4 {
   margin: 10px;
+  font-size: 1.5rem;
 }
