@@ -1,12 +1,78 @@
-.background {
-  background-color: bisque;
+* {
+  font-family: 'Montserrat', sans-serif;
 }
-.background.morning {
-  background-color: orangered;
+body {
+  background: url("./assets/pexels-johannes-plenio.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-.background.day {
-  background-color: green;
+body.rain {
+  background: url("./assets/pexels-eberhard-grossgasteiger-2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-.background.night {
-  background-color: blue;
+
+body.cloudy {
+  background: url("./assets/pexels-eberhard-grossgasteiger.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.clear {
+  background: url("./assets/pexels-francesco-ungaro.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  border: none;
+  border-radius: 6px;
+}
+
+.weatherContainer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;  
+}
+
+.weatherInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.534);
+  width: 300px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+input {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-weight: 900;
+  font-size: 1.2rem;
+  border-radius: 4px;
+}
+
+h4 {
+  margin: 10px;
+  font-size: 1.5rem;
 }
