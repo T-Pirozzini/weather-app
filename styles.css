@@ -1,9 +1,12 @@
-background.morning {
+.background {
+  background-color: bisque;
+}
+.background.morning {
   background-color: orangered;
 }
-background.day {
+.background.day {
   background-color: green;
 }
-background.night {
+.background.night {
   background-color: blue;
 }
